@@ -1,17 +1,8 @@
-// ===== LOAD ANIMATION =====
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".card");
+function toggleMenu() {
+  const nav = document.getElementById("navMenu");
+  nav.style.display = nav.style.display === "block" ? "none" : "block";
+}
 
-  cards.forEach((card, i) => {
-    setTimeout(() => {
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }, i * 120);
-  });
-});
-
-
-// ===== CATEGORY FILTER =====
 function filterMenu(category) {
   const cards = document.querySelectorAll(".card");
 
@@ -26,14 +17,13 @@ function filterMenu(category) {
   });
 }
 
-
-// ===== SEARCH FUNCTION =====
-document.getElementById("search").addEventListener("keyup", function () {
-  let value = this.value.toLowerCase();
-  let cards = document.querySelectorAll(".card");
+document.getElementById("search").addEventListener("input", function () {
+  const value = this.value.toLowerCase();
+  const cards = document.querySelectorAll(".card");
 
   cards.forEach(card => {
-    let text = card.innerText.toLowerCase();
-    card.style.display = text.includes(value) ? "block" : "none";
+    card.style.display = card.innerText.toLowerCase().includes(value)
+      ? "block"
+      : "none";
   });
 });

@@ -1,54 +1,90 @@
 body {
   margin: 0;
-  font-family: Arial;
-  background: #0f0f0f;
+  font-family: Arial, sans-serif;
+  background: #111;
   color: white;
 }
 
 /* HEADER */
 header {
+  background: linear-gradient(135deg, #ffb300, #ff8f00);
+  padding: 25px 15px;
   text-align: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #ff8c00, #ffb347);
+  position: relative;
+  overflow: hidden;
+}
+
+/* background QR text */
+.bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 32px;
+  font-weight: bold;
+  opacity: 0.15;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+/* foreground content */
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
   color: black;
 }
 
+header p {
+  margin: 5px 0 10px;
+  color: black;
+}
+
+/* search */
 header input {
-  margin-top: 10px;
+  width: 85%;
   padding: 10px;
-  width: 80%;
   border-radius: 10px;
   border: none;
 }
 
-/* CATEGORIES */
-.categories {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px;
-  flex-wrap: wrap;
-}
-
-.categories button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 10px;
+/* NAV */
+.nav-toggle {
   background: #222;
-  color: white;
+  padding: 12px;
+  text-align: center;
   cursor: pointer;
 }
 
-.categories button:hover {
-  background: #ffb347;
+nav {
+  display: none;
+  background: #1c1c1c;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  background: #ffb300;
   color: black;
 }
 
 /* MENU */
 .menu {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 15px;
   max-width: 500px;
   margin: auto;
   padding: 15px;
@@ -56,26 +92,30 @@ header input {
 
 /* CARD */
 .card {
-  background: rgba(255,255,255,0.06);
-  border-radius: 15px;
-  padding: 15px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.4s ease;
+  background: #1c1c1c;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 12px;
 }
 
 .card h3 {
-  color: #ffb347;
+  margin: 10px;
+  color: #ffb300;
 }
 
 .card p {
+  margin: 0 10px;
   color: #ccc;
+}
+
+.card span {
+  display: block;
+  margin: 10px;
+  font-weight: bold;
 }
