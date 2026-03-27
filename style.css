@@ -5,46 +5,25 @@ body {
   color: white;
 }
 
-/* HEADER */
+/* HEADER (CLEAN) */
 header {
   background: linear-gradient(135deg, #ffb300, #ff8f00);
   padding: 25px 15px;
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-/* background QR text */
-.bg-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  font-size: 32px;
-  font-weight: bold;
-  opacity: 0.15;
-  letter-spacing: 2px;
-  white-space: nowrap;
-}
-
-/* foreground content */
-.header-content {
-  position: relative;
-  z-index: 2;
-}
-
-header h1 {
+.header-content h1 {
   margin: 0;
   font-size: 28px;
   color: black;
 }
 
-header p {
+.header-content p {
   margin: 5px 0 10px;
   color: black;
 }
 
-/* search */
+/* SEARCH */
 header input {
   width: 85%;
   padding: 10px;
